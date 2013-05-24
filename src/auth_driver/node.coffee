@@ -19,10 +19,11 @@ class Dropbox.AuthDriver.NodeServer
     else
       @_tlsOptions = null
     # Calling require in the constructor because this doesn't work in browsers.
-    @_fs = require 'fs'
-    @_http = require 'http'
-    @_https = require 'https'
-    @_open = require 'open'
+    # Have to add an empty string to prevent Firefox Add-on issues
+    @_fs = require 'fs' + ''
+    @_http = require 'http' + ''
+    @_https = require 'https' + ''
+    @_open = require 'open' + ''
 
     @_callbacks = {}
     @_nodeUrl = require 'url'

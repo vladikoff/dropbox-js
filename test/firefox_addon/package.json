@@ -1,0 +1,9 @@
+{
+  "name": "firefox_addon",
+  "fullName": "firefox_addon",
+  "id": "jid1-NZVXAjb3oBcm8g",
+  "description": "a firefox dropbox sample",
+  "author": "",
+  "license": "MIT",
+  "version": "0.1"
+}

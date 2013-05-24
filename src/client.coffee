@@ -406,7 +406,10 @@ class Dropbox.Client
     xhr = new Dropbox.Util.Xhr 'GET',
                                "#{@urls.getFile}/#{@urlEncodePath(path)}"
     xhr.setParams(params).signWithOauth @oauth, httpCache
-    xhr.setResponseType responseType
+    # Firefox Add-ons 1.14 does not support setResponseType, fixed in nightly versions
+    # TODO: This should be updated when Firefox Add-on SDK 1.15 is out
+    if (typeof Buffer is "function" || typeof window isnt 'undefined')
+      xhr.setResponseType responseType
     if rangeHeader
       xhr.setHeader 'Range', rangeHeader if rangeHeader
       xhr.reportResponseHeaders()

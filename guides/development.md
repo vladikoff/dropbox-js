@@ -145,6 +145,10 @@ The tests for Chrome apps / extensions require manual intervention right now.
 The `cake chrometest` command will open a Google Chrome instance. The
 `dropbox.js Test Suite` application must be clicked.
 
+### Firefox Add-on testing
+
+Firefox Add-on testing requires the [Add-on SDK](https://addons.mozilla.org/en-US/developers/docs/sdk/latest/).
+Download the SDK, `source bin/activate` it and then run `cake firefox`.
 
 ### Cordova Testing
 

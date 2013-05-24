@@ -5,9 +5,8 @@ if typeof atob is 'function' and typeof btoa is 'function'
   atob = (string) -> window.atob string
   btoa = (base64) -> window.btoa base64
 
-else if (typeof window isnt 'undefined' or typeof self isnt 'undefined') and
-    (typeof navigator isnt 'undefined' and
-     typeof navigator.userAgent is 'string')
+else if ((typeof window isnt 'undefined' or typeof self isnt 'undefined') and
+    (typeof navigator isnt 'undefined' and typeof navigator.userAgent is 'string')) or typeof Buffer isnt "function"
   # IE < 10, no standard atob / btoa functions.
   base64Digits =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'

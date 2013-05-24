@@ -12,6 +12,7 @@ This library is tested against the following JavaScript platforms.
 * [node.js](http://nodejs.org/) 0.6, 0.8 and 0.10
 * [Chrome](http://www.google.com/chrome) 28
 * [Firefox](http://www.mozilla.org/firefox) 22
+* [Firefox Add-on SDK](https://addons.mozilla.org/en-US/developers/docs/sdk/latest/) 1.14
 * [Internet Explorer](https://github.com/xdissent/ievms) 9 and 10
 * [Chrome extensions](http://developer.chrome.com/extensions) in the Chrome
   browser mentioned above

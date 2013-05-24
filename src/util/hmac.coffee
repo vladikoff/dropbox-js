@@ -26,7 +26,8 @@ Dropbox.Util.sha1 = (string) ->
 # SHA1 and HMAC-SHA1 versions that use the node.js builtin crypto.
 if typeof require isnt 'undefined'
   try
-    crypto = require 'crypto'
+    # Have to define module names with empty strings due to Firefox add-on require environment
+    crypto = require 'crypto' + ''
     if crypto.createHmac and crypto.createHash
       Dropbox.Util.hmac = (string, key) ->
         hmac = crypto.createHmac 'sha1', key

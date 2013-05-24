@@ -20,8 +20,14 @@ if typeof XMLHttpRequest isnt 'undefined' and
       navigator.userAgent.indexOf('Firefox') is -1
   DropboxXhrDoesPreflight = true
 else
-  # Node.js.
-  DropboxXhrRequest = require('xhr2')  # Need an XHR emulation.
+  # Node.js or Firefox Add-on environment
+  if (typeof Buffer isnt "function")
+    # TODO: When Firefox Add-on SDK 1.15 ships, this should be changed to:
+    # DropboxXhrRequest = require("sdk/addon/window").window.XMLHttpRequest
+    DropboxXhrRequest = require("sdk/net/xhr").XMLHttpRequest
+  else
+    DropboxXhrRequest = require('xhr2' + ''); # Need an XHR emulation.
+
   DropboxXhrIeMode = false
   # Node.js doesn't have FormData. We wouldn't want to bother putting together
   # upload forms in node.js anyway, because it doesn't do CORS preflight

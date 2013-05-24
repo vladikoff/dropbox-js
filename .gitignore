@@ -22,6 +22,7 @@ test/chrome_app/test
 test/chrome_extension/*.js
 test/chrome_profile
 test/cordova_app
+test/firefox_addon/lib/dropbox.js
 test/js
 tmp/*.js
 
